@@ -1,0 +1,62 @@
+.businessFollow-page {
+  height: 1334px;
+  padding: 0 32px;
+  .list{
+    background: #fff;
+    border-bottom: 1px solid #F6F6F6;
+    padding: 32px 0;
+    .top{
+      height: 40px;
+      line-height: 40px;
+      .top-l{
+        float: left;
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 1;
+      }
+      .top-r{
+        float: right;
+        position: relative;
+        color: #F5A623;
+        font-size: 28px;
+        .dot{
+          position: absolute;
+          top: 50%;
+          left: -20px;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #F5A623;
+        }
+      }
+    }
+    .bottom{
+      color: #6D7385;
+      overflow: hidden;
+      .bottom-l{
+        float: left;
+      }
+      .bottom-r{
+        float: right;
+        .follow-icon{
+          width: 28px;
+          height: 28px;
+          vertical-align: middle;
+          margin-right: 12px;
+        }
+        .bottom-text{
+          vertical-align: middle;
+          color: #1890FF;
+        }
+      }
+    }
+    .middle{
+      padding: 32px 0;
+      .source{
+        margin-top: 16px;
+      }
+    }
+  }
+  
+}

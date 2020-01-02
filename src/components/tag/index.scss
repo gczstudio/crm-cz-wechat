@@ -1,0 +1,13 @@
+
+.tag-page {
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px;
+  .tag{
+    float: left;
+    padding: 5px 20px;
+    border-radius: 8px;
+    color: #333;
+    border: 1px solid #333;
+  }
+}

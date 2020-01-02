@@ -1,0 +1,31 @@
+
+.createSchedule-page {
+  padding-top: 120px;
+  .at-textarea{
+    border: 0;
+    padding: 20px;
+  }
+  .at-input{
+    margin-left: 24px;
+    input{
+      text-align: right;
+    }
+  }
+  .schedule-desc{
+    margin-top: 20px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .submit-btn{
+    box-sizing: border-box;
+    padding: 32px;
+  }
+  .at-list__item-extra{
+    max-width: initial;
+  }
+  .title{
+    margin: 20px 0;
+    .at-input input{
+      text-align: left;
+    }
+  }
+}

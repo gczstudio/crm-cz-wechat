@@ -1,0 +1,18 @@
+
+.follow-page {
+  box-sizing: border-box;
+  height: 100%;
+  background: #fff;
+  padding-top: 120px;
+  .at-textarea{
+    border: 0;
+    padding: 20px;
+  }
+  .submit-btn{
+    box-sizing: border-box;
+    padding: 32px;
+  }
+  .at-list__item-extra{
+    max-width: initial;
+  }
+}

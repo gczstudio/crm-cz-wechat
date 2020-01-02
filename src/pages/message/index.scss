@@ -1,0 +1,43 @@
+
+.message-page {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 120px;
+  .list{
+    margin: 16px 0;
+    padding: 32px;
+    background: #fff;
+    line-height: 2;
+    .top{
+      overflow: hidden;
+      .top-l{
+        float: left;
+      }
+      .top-r{
+        float: right;
+        position: relative;
+        .dot{
+          position: absolute;
+          top: 28px;
+          left: -20px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #FF4949;
+        }
+      }
+    }
+    .middle{
+      color: #6D7385;
+    }
+    
+  }
+  .vertical-m{
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+  .detail-content{
+    padding: 32px;
+    line-height: 2;
+  }
+}

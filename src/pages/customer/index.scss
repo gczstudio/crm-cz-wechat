@@ -1,0 +1,15 @@
+
+.customer-page {
+  height: 100%;
+  padding-top: 280px;
+  .customer-header{
+    width: 100%;
+    position: fixed;
+    top: 120px;
+    z-index: 9;
+  }
+  .tab{
+    padding: 20px 80px;
+    background: #fff;
+  }
+}

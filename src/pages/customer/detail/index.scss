@@ -1,0 +1,38 @@
+
+.detail-page {
+  padding: 120px 0 100px;
+  .table{
+    text-align: center;
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #F5F5F5;
+    .tr{
+      line-height: 2;
+      display: flex;
+      .th{
+        flex: 1;
+        color: #6D7385;
+      }
+      .td{
+        flex: 1;
+      }
+    }
+  }
+  .at-list{
+    margin-top: 20px;
+  }
+  .basic-info-title{
+    .at-list__item{
+      font-weight: bold;
+    }
+    
+  }
+  .basic-header{
+    padding: 20px;
+    font-size: 28px;
+  }
+  .customer-tag{
+    padding: 20px 10px;
+    background: #fff;
+  }
+}

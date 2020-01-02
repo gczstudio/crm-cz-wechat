@@ -1,0 +1,113 @@
+
+.relationMatter-page {
+  position: relative;
+  height: 100%;
+  .lists{
+    box-sizing: border-box;
+    height: 1080px;
+    border-top: 1px solid #F5F5F5;
+    padding-bottom: 160px;
+    background: #F6FAFC;
+  }
+  .list-box {
+    overflow: hidden;
+    padding: 54px 32px;
+    font-size: 32px;
+    margin: 16px 0;
+    background: #fff;
+    .title{
+      float: left;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .radio{
+      float: right;
+    }
+  }
+  .person-list{
+    position: relative;
+    padding: 32px 32px 32px 24px;
+    background: #fff;
+    margin: 16px 0;
+    .item-container{
+      display: flex;
+      align-items: center;
+      .item-icon{
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+      }
+      .title{
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .note{
+        color: #6D7385;
+        margin-top: 10px;
+      }
+    }
+    .item-extra{
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  .outwork-list{
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    .top{
+      overflow: hidden;
+      .top-l{
+        float: left;
+        .avatar{
+          width: 80px;
+          height: 80px;
+          float: left;
+        }
+        .person{
+          margin-left: 100px;
+          .role{
+            color: #999;
+            margin-left: 10px;
+            font-size: 24px;
+          }
+        }
+        .time{
+          margin-left: 100px;
+          color: #999;
+          font-size: 24px;
+        }
+      }
+      .top-r{
+        float: right;
+        color: #999;
+        font-size: 24px;
+      }
+    }
+    .middle, .bottom{
+      padding: 0 10px;
+      color: #999;
+      font-size: 24px;
+      line-height: 1.8;
+    }
+    .item-extra{
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  .sure{
+    box-sizing: border-box;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 120px;
+    width: 100%;
+    background:rgba(255,255,255,1);
+    box-shadow:0px -4px 8px 0px rgba(0,97,255,0.2);
+  }
+}

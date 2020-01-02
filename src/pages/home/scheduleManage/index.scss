@@ -1,0 +1,95 @@
+
+.scheduleManage-page {
+  padding-top: 120px;
+  .at-calendar{
+    padding-top: 20px;  
+    background: #fff;
+  }
+  .lists{
+    border-top: 1px solid #f5f5f5;
+    .list-item{
+      background: #fff;
+      padding: 32px;
+      border-bottom: 1px solid #f5f5f5;
+      position: relative;
+      .item-content{
+        border-left: 4px solid #0BA194;
+        padding-left: 32px;
+        color: #000;
+        line-height: 1;
+        .tag{
+          display: inline-block;
+          width:80px;
+          height:36px;
+          line-height: 36px;
+          text-align: center;
+          border: 1px solid #0BA194;
+          border-radius: 4px;
+          margin:0 10px 32px 0;
+        }
+        .time{
+          color:rgba(0,0,0,0.6);
+        }
+        .remindStatus{
+          position: absolute;
+          top: 50%;
+          right: 40px;
+          transform: translateY(-50%);
+          width:80px;
+          height:38px;
+          line-height: 38px;
+          text-align: center;
+          background:rgba(233,233,233,1);
+          border-radius:4px;
+          color: #919191;
+
+        }
+      }
+    }
+    .customer_visit{
+      .item-content{
+        border-color: #0BA194;
+      }
+      .tag{
+        border-color: #0BA194;
+        background: rgba(11,161,148,0.3);
+        color: #0BA194;
+      }
+    }
+    .business_opportunities{
+      .item-content{
+        border-color: #1890FF;
+      } 
+      .tag{
+        border-color: #1890FF;
+        background:rgba(24,144,255,0.3);
+        color: #1890FF;
+      }
+    }
+    .schedule_meeting{
+      .item-content{
+        border-color: #E83820;
+      }
+      .tag{
+        border-color: #E83820;
+        background:rgba(242,71,36,0.3);
+        color: #E83820;
+      }
+    }
+  }
+  .no-data{
+    text-align: center;
+    padding: 40px 0;
+    font-size: 28px;
+    color:rgba(0,0,0,0.3);
+    .no-data-bg{
+      width: 336px;
+      height: 282px;
+    }
+  }
+  .create-btn{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+  }
+}

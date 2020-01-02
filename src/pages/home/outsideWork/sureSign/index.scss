@@ -1,0 +1,21 @@
+
+.sureSign-page {
+  .at-textarea{
+    border: 0;
+    padding: 20px;
+  }
+  .at-input{
+    margin-left: 24px;
+    input{
+      text-align: right;
+    }
+  }
+  .submit-btn{
+    // display: inline-block;
+    margin: 40px;
+    padding: 40px;
+  }
+  .at-list__item-extra{
+    max-width: initial;
+  }
+}

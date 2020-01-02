@@ -1,0 +1,43 @@
+
+.mine-page {
+  box-sizing: border-box;
+  height: 100%;
+  background: #fff;
+  padding-top: 120px;
+  .mine-header{
+    padding: 40px;
+    border-bottom: 1px solid #F5F5F5;
+    overflow: hidden;
+    margin-bottom: 20px;
+    .avatar{
+      width: 150px;
+      height: 150px;
+      float: left;
+    }
+    .user{
+      margin-left: 170px;
+      padding-top: 40px;
+      line-height: 2;
+      .person{
+        .role{
+          margin-left: 10px;
+          color: #6D7385;
+          font-size: 24px;
+        }
+      }
+      .number{
+        color: #6D7385;
+      }
+    } 
+    
+  }
+  .logout{
+    margin-top: 200px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-top: 1px solid #F5F5F5;
+    border-bottom: 1px solid #F5F5F5;
+    color: #E83820;
+  }
+}

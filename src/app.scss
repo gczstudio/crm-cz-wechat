@@ -1,0 +1,66 @@
+//自定义日历样式
+.at-calendar {
+  .at-calendar__list.flex .flex__item {
+    color: #000;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    margin: 0 -1px -1px 0;
+    &:nth-child(7n){
+      margin-right: 0;
+    }
+  }
+  .at-calendar__list.flex .flex__item--blur{
+    color: #d8d8d8;
+  }
+
+   .at-calendar__list.flex .flex__item--today{
+    color: #E71519;
+   }
+  .at-calendar__list.flex .flex__item--selected-head.flex__item--selected-tail{
+    background: #fce7e8;
+    border-radius: 0;
+    .extra-marks .mark{
+      border-left: 16px solid #fce7e8;
+    }
+  }
+
+  .at-calendar__list.flex .flex__item--selected-head.flex__item--selected-tail .flex__item-container{
+    background: transparent;
+    color: #E71519;
+  }
+
+  .at-calendar__list.flex .flex__item-extra .extra-marks{
+    position: absolute;
+    line-height: 0;
+    right:0;
+    top:0;
+    left: initial;
+    bottom: initial;
+    transform: translateX(0);
+  }
+  .at-calendar__list.flex .flex__item-extra .extra-marks .mark{
+    width: 0;
+    height:0;
+    border-top: 16px solid #E71519;
+    border-left: 16px solid #fff;
+    border-radius: 0;
+  }
+}
+.home-page{
+  .at-calendar__controller .controller__info{
+    display: none;
+  }
+}
+
+
+//自定义tab样式
+.at-tabs__item{
+  color: #6D7385;
+  font-weight: bold;
+}
+.at-tabs__item--active{
+  color: #e83820;
+}
+.at-tabs__item-underline{
+  height: 4px;
+}

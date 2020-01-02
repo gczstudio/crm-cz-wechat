@@ -1,0 +1,105 @@
+
+.announcement-page {
+  height: 100%;
+  padding-top: 200px;
+  box-sizing: border-box;
+  .search-box{
+    width: 100%;
+    position: fixed;
+    top: 120px;
+    z-index: 9;
+  }
+  .list{
+    box-sizing: border-box;
+    height: 1100px;
+    .list-item{
+      padding: 32px;
+      background: #fff;
+      border-bottom: 1px solid #f5f5f5;
+      .top{
+        height: 40px;
+        line-height: 40px;
+        .top-l{
+          float: left;
+          position: relative;
+          padding-left: 16px;
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 1;
+          &::before{
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 30px;
+            background: #E83820;
+          }
+        }
+        .top-r{
+          float: right;
+          position: relative;
+          .dot{
+            position: absolute;
+            top: 18px;
+            left: -20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4bd863;
+          }
+        }
+      }
+      .bottom{
+        color: #6D7385;
+        overflow: hidden;
+        .bottom-l{
+          float: left;
+        }
+        .bottom-r{
+          float: right;
+          .bottom-text{
+            vertical-align: middle
+          }
+        }
+      }
+      .middle{
+        padding: 32px 0;
+      }
+      .tag{
+        display: inline-block;
+        padding: 0 15px;
+        margin-left: 10px;
+        text-align: center;
+        border-radius: 10px;
+        color: #73D13D;
+        font-size: 24px;
+        height:40px;
+        line-height: 40px;
+        background:rgba(115,209,61,0.1);
+        border-radius:4px;
+      }
+    }
+    .unread{
+      color: #6D7385;
+      .top{
+        .top-l{
+          &::before{
+            background: #6D7385;
+          }
+        }
+        .top-r{
+          .dot{
+            background: #6D7385;
+          }
+        }
+      }
+      .tag{
+        color: #6D7385;
+        background:rgba(109,115,133,0.1);
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,31 @@
+
+.detail-page {
+  height: 100%;
+  background: #fff;
+  .detail-content{
+    padding: 32px;
+    line-height: 1.5;
+    .title{
+      position: relative;
+      padding-left: 16px;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1;
+      &::before{
+        content: ' ';
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: 30px;
+        background: #E83820;
+      }
+    }
+    .content{
+      padding: 10px 0;
+    }
+    .time{
+      color: #6D7385;
+    }
+  }
+  
+}

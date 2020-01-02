@@ -1,0 +1,16 @@
+/* Custom Theme */
+// $color-brand: #147cfc;
+// $color-brand-light: #4f9dfd;
+// $color-brand-dark: #1063ca;
+$color-text-base: #161616 !default; // 文字的基本色
+$color-brand: #e83820;
+$color-brand-light: #ee6a58;
+$color-brand-dark: #ba2d1a;
+/* 边框颜色 */
+$color-border-base: #d5d5d5 !default; 
+/* List */
+$at-list-content-color: #161616 !default;
+$at-list-extra-color: #161616 !default;
+$at-list-extra-width: 235px !default;
+
+@import "~taro-ui/dist/style/index.scss";

@@ -1,0 +1,24 @@
+
+.download-page {
+  .file-list{
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    background: #F7F7F7;
+  }
+  .file-name{
+    display: inline-block;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin: 0 20px;
+  }
+  .file-size{
+    vertical-align: middle;
+    margin-right: 20px;
+    color: #999;
+  }
+}

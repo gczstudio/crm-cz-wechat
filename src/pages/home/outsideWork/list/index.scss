@@ -1,0 +1,45 @@
+
+.list-page {
+  padding: 20px;
+  .list{
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    .top{
+      overflow: hidden;
+      .top-l{
+        float: left;
+        .avatar{
+          width: 80px;
+          height: 80px;
+          float: left;
+        }
+        .person{
+          margin-left: 100px;
+          .role{
+            color: #999;
+            margin-left: 10px;
+            font-size: 24px;
+          }
+        }
+        .time{
+          margin-left: 100px;
+          color: #999;
+          font-size: 24px;
+        }
+      }
+      .top-r{
+        float: right;
+        color: #999;
+        font-size: 24px;
+      }
+    }
+    .middle, .bottom{
+      padding: 0 10px;
+      color: #999;
+      font-size: 24px;
+      line-height: 1.8;
+    }
+  }
+}

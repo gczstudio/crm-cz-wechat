@@ -1,0 +1,76 @@
+
+.orgTree-page {
+  padding: 140px 0;
+  .orgTree-header{
+    width: 100%;
+    position: fixed;
+    top: 120px;
+    z-index: 9;
+    .bread-crumb{
+      padding: 10px 20px;
+      background: #F6FAFC;
+      display: flex;
+    }
+  }
+  .person-list{
+    position: relative;
+    border-bottom: 1px solid #F5F5F5;
+    padding: 20px;
+    background: #fff;
+    .item-container{
+      display: flex;
+      align-items: center;
+      .item-icon{
+        margin-right: 20px;
+      }
+      .title, .note{
+        line-height: 1.5;
+      }
+      .note{
+        color: #999;
+      }
+    }
+    .item-extra{
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  .has-select{
+    width: 100%;
+    height: 120px;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #F5F5F5;
+    .user-list{
+      width: 75%;
+      overflow: auto;
+      display: flex;
+      font-size: 24px;
+      margin-left: 10px;
+      text-align: center;
+      .user{
+        position: relative;
+        margin-left: 10px;
+        .icon-close{
+          position: absolute;
+          top: 0;
+          right:-5px;
+        }
+      }
+    }
+    .sure{
+      position: absolute;
+      top: 50%;
+      right:20px;
+      transform: translateY(-50%);
+      padding: 10px 20px;
+      border-radius: 40px;
+      background: #147cfc;
+      color: #fff;
+    }
+  }
+}

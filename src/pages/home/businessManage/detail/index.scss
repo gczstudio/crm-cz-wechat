@@ -1,0 +1,117 @@
+
+.detail-page {
+  height: 100%;
+  padding: 120px 0;
+  .table{
+    text-align: center;
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #F5F5F5;
+    .tr{
+      overflow: hidden;
+      line-height: 2;
+      &:nth-child(n+3){
+        border-top: 1px solid #F5F5F5;
+        line-height: 3;
+      }
+      .th{
+        width: 50%;
+        float: left;
+        color: #6D7385;
+        font-weight: bold;
+        font-size: 28px;
+      }
+      .td{
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+  .step{
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid #F5F5F5;
+    border-bottom: 1px solid #F5F5F5;
+    background: #fff;
+  }
+
+  .history{
+    margin-top: 20px;
+    border-top: 1px solid #F5F5F5;
+    border-bottom: 1px solid #F5F5F5;
+    background: #fff;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 20px;
+    color: #E83820;
+  }
+  .history-list{
+    height: 100%;
+    padding-bottom: 160px;
+    .list{
+      .date{
+        line-height: 3;
+        position: relative;
+        padding-left: 40px;
+        margin-left: 20px;
+        &::before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          border: 5px solid #E83820;
+          border-radius: 50%;
+        }
+      }
+      .card{
+        background: #fff;
+        margin-bottom: 16px;
+        .top{
+          height: 40px;
+          line-height: 40px;
+          padding: 20px;
+          .top-l{
+            float: left;
+          }
+          .top-r{
+            float: right;
+            position: relative;
+            .dot{
+              position: absolute;
+              top: 18px;
+              left: -20px;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background: #4bd863;
+            }
+          }
+        }
+        .bottom{
+          height: 40px;
+          line-height: 40px;
+          padding: 20px;
+          border-top: 1px solid #f2f2f2;
+          color: #999999;
+          .bottom-l{
+            float: left;
+          }
+      
+          .bottom-r{
+            .bottom-text{
+              color: #E83820;
+            }
+            float: right;
+          }
+        }
+        .middle{
+          padding: 20px 20px 40px;
+        }
+      }
+    }
+
+  }
+}
