@@ -39,7 +39,7 @@ export default class Layout extends Component {
     const { show } = this.state
     return (
       <View className={'layout-page '+(show?'show':'hide')}>
-        <Header title={this.props.title} showLeft fixed onClickLeft={this.onClickHandler} />
+        <Header title={this.props.title} showLeft  onClickLeft={this.onClickHandler} />
         {
           this.props.children
         }

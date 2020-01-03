@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "crm-cz-wechat",
 	"description": "",
-	"appid": "touristappid",
+	"appid": "wx915abc700330d3dc",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,

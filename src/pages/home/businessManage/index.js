@@ -109,13 +109,14 @@ export default class Businessmanage extends Component {
     return (
       <View className='businessManage-page'>
         <Header title='商机管理' showLeft fixed />
-        <AtSearchBar
-          value={this.state.value}
-          onChange={this.onChangeHandler}
-          onActionClick={this.onActionClickHandler}
-          placeholder='商机名称/客户姓名'
-        />
-
+        <View className='search-box'>
+          <AtSearchBar
+            value={this.state.value}
+            onChange={this.onChangeHandler}
+            onActionClick={this.onActionClickHandler}
+            placeholder='商机名称/客户姓名'
+          />
+        </View>
       <Pagination totalCount={businessLists.total} currentLen={businessLists.content.length} onPull={this.businessListsPullHandler}>
         {
           businessLists.content.map(item=>{

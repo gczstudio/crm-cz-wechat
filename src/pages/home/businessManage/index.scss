@@ -2,6 +2,12 @@
 .businessManage-page {
   height: 100%;
   padding-top: 120px;
+  .search-box{
+    width: 100%;
+    position: fixed;
+    top: 120px;
+    z-index: 9;
+  }
   .list{
     background: #fff;
     border-bottom: 1px solid #F6F6F6;

@@ -23,6 +23,7 @@ class App extends Component {
   // eslint-disable-next-line react/sort-comp
   config = {
     pages: [
+      
       'pages/login/index',
       'pages/login/confirmRole/index',
       'pages/home/index',
@@ -50,7 +51,7 @@ class App extends Component {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTextStyle: 'black',
-      "navigationStyle": "custom"
+      navigationStyle: "custom",
     },
     tabBar: {
       color: '#BCC7D6',
