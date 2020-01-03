@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtSegmentedControl } from 'taro-ui'
+import Header from '@/components/header'
 import SignIn from './signIn'
 import List from './list'
 
@@ -11,9 +12,6 @@ import './index.scss'
   ...outsideWork,
 }))
 export default class Outsidework extends Component {
-  config = {
-    navigationBarTitleText: '考勤打卡',
-  }
 
   constructor () {
     super(...arguments)
@@ -30,6 +28,7 @@ export default class Outsidework extends Component {
   render() {
     return (
       <View className='outsideWork-page'>
+        <Header title='考勤打卡' showLeft fixed />
         <View className='tab'>
           <AtSegmentedControl
             values={['外勤签到', '签到列表']}

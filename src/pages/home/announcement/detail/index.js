@@ -1,11 +1,14 @@
+import '@tarojs/async-await'
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, CoverImage, RichText } from '@tarojs/components'
+import { View, Text, Image, RichText } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtIcon, AtFloatLayout, AtTextarea } from 'taro-ui'
 import Download from '@/components/download'
 import dianzanActive from '@/images/dianzan-active.png'
 import Header from '@/components/header'
 import { formatDate, getTypeNames } from '@/utils/index'
+import { baseUrl } from '@/config/index'
+import avatar from '@/images/avatar.png'
 
 import './index.scss'
 
@@ -20,7 +23,8 @@ export default class Detail extends Component {
       isOpened: false,
       value: '',
       replyCommentId: '',
-      isReply: false
+      isReply: false,
+      avatars: []
     }
   }
 
@@ -33,7 +37,12 @@ export default class Detail extends Component {
     this.props.dispatch({
       type: 'announcementDetail/announcementDetail',
       data: {
-        id
+        data: {
+          id
+        },
+        callback: (data) =>{
+          this.getAvatars(data.replyCommentList)
+        }
       }
     })
   }
@@ -118,8 +127,42 @@ export default class Detail extends Component {
     
   }
 
+  //请求头像 (请求一个成功之后再请求下一个，同时请求会很慢)
+  async getAvatars(data){
+    for(let item of data){
+      const response = await this.fetchFunc(item.createName.headIconId);
+      let copyAvatars = JSON.parse(JSON.stringify(this.state.avatars));
+      copyAvatars.push('data:image/png;base64,'+Taro.arrayBufferToBase64(response.data)); 
+      this.setState({
+        avatars: copyAvatars
+      })
+    }
+
+  }
+
+  fetchFunc = (id) => {
+    return new Promise((resolve, reject)=>{
+      Taro.request({
+          url: `${baseUrl}/common/file/download?id=${id}`,
+          method: 'GET',
+          responseType: 'arraybuffer',
+          header: {
+            'Content-Type': 'application/json',
+            'Cookie': Taro.getStorageSync('Cookie')
+          },
+          success: (res) => {
+            resolve(res)
+            
+          },
+          fail: (err) => {
+            reject(err)
+          }
+        })
+    })
+  }
+
   render() {
-    const { isOpened } = this.state
+    const { isOpened, avatars } = this.state
     const { detailData, files } = this.props
     return (
       <View className='detail-page'>
@@ -139,7 +182,7 @@ export default class Detail extends Component {
           <View className='thumbs-up'>
             <View className='thumbs-up-tag'>
               <View className='hand'>
-                <CoverImage src={dianzanActive}></CoverImage>
+                <Image src={dianzanActive} style='width: 100%;height: 100%;'></Image>
               </View>
             </View>
             <Text>{detailData.supportCount}人赞过</Text>
@@ -147,12 +190,12 @@ export default class Detail extends Component {
           <View className='comment'>
             <View className='list-title'>全部评论（{detailData.replyCommentNumber}）</View>
             {
-              detailData.replyCommentList.map(item=>{
+              detailData.replyCommentList.map((item, index)=>{
                 return (
                   item.superiorReplyComment? 
                   <View className='list' key={item.id}>
                     <View className='img'>
-                    <CoverImage src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4100987808,2324741924&fm=26&gp=0.jpg'></CoverImage>
+                    <Image src={avatars[index] || avatar} style='width: 100%;height: 100%;border-radius: 50%;'></Image>
                     </View>
                     <View className='list-left'>
                         <View className='list-handler'>
@@ -179,7 +222,7 @@ export default class Detail extends Component {
                   :
                   <View className='list' key={item.id}>
                     <View className='img'>
-                    <CoverImage src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4100987808,2324741924&fm=26&gp=0.jpg'></CoverImage>
+                    <Image src={avatars[index] || avatar} style='width: 100%;height: 100%;border-radius: 50%;'></Image>
                     </View>
                     <View className='list-left'>
                         <View className='list-handler'>

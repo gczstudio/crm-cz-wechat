@@ -3,6 +3,7 @@ import { View, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtIcon  } from 'taro-ui'
 import PropTypes from 'prop-types'
+import { baseUrl } from '@/config/index'
 
 import './index.scss'
 
@@ -17,10 +18,23 @@ export default class Download extends Component {
 
   downloadHandler = (id) => {
     Taro.downloadFile({
-      url: `http://192.168.1.74:8080/crm/common/file/download?id=${id}`
-    }).then((res)=>{
-      if (res.statusCode === 200) {
-       console.log(res)
+      url: `${baseUrl}/common/file/download?id=${id}`,
+      header: {
+        'Content-Type': 'application/json',
+        'Cookie': Taro.getStorageSync('Cookie')
+      },
+    }).then((data)=>{
+      //返回的二进制流处理不了
+      if (data.statusCode === 200) {
+        Taro.saveFile({
+          tempFilePath: data.tempFilePath,
+          success: (res) => {
+            console.log(res)
+          },
+          fail: function (err) {
+            console.log('保存失败：', err)
+          }
+        });
       }
     })
   }

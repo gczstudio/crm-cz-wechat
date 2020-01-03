@@ -1,10 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, CoverImage, Text } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import avatar from '@/images/avatar.png'
 import { AtList, AtListItem, AtRadio, AtActionSheet, AtActionSheetItem } from 'taro-ui'
 import Header from '@/components/header'
 import Layout from '@/components/layout'
+import { baseUrl } from '@/config/index'
 
 import './index.scss'
 
@@ -21,7 +22,8 @@ export default class Mine extends Component {
       },
       userInfo: '',
       roleType: '',
-      isOpened: false
+      isOpened: false,
+      avatarUrl: ''
     }
   }
 
@@ -33,12 +35,32 @@ export default class Mine extends Component {
       userInfo,
       roleType: String(userInfo.id)
     })   
+    this.getAvatar(roleInfo)
   }
 
   componentDidHide(){
     this.setState({
       isOpened: false
     })
+  }
+
+  getAvatar = (roleInfo) => {
+    Taro.request({
+      url: `${baseUrl}/common/file/download?id=${roleInfo.headIconId}`,
+      method: 'GET',
+      responseType: 'arraybuffer',
+      header: {
+        'Content-Type': 'application/json',
+        'Cookie': Taro.getStorageSync('Cookie')
+      },
+      success: (res) => {
+        this.setState({
+          avatarUrl: 'data:image/png;base64,'+Taro.arrayBufferToBase64(res.data)
+        })
+        
+      }
+    })
+
   }
 
   roleTypeHandler = () => {
@@ -119,13 +141,13 @@ export default class Mine extends Component {
   }
 
   render() {
-    const { roleInfo, userInfo, roleType, isOpened } = this.state
+    const { roleInfo, userInfo, roleType, isOpened, avatarUrl } = this.state
     return (
       <View className='mine-page'>
         <Header title='我的' showLeft={false} fixed />
         <View className='mine-header'>
           <View className='avatar'>
-            <CoverImage src={avatar}></CoverImage>
+            <Image src={avatarUrl || avatar} className='icon'></Image>
           </View>
           <View className='user'>
             <View className='person'>{roleInfo.name}<Text className='role'>{userInfo.name}</Text></View>

@@ -117,45 +117,46 @@ export default class Businessmanage extends Component {
             placeholder='商机名称/客户姓名'
           />
         </View>
-      <Pagination totalCount={businessLists.total} currentLen={businessLists.content.length} onPull={this.businessListsPullHandler}>
-        {
-          businessLists.content.map(item=>{
-            return (  
-              <View className='list' key={item.id}>
-                <View className='top'>
-                  <View className='top-l'>{item.name}</View>
-                  <View className={'top-r ' + (item.status.toLowerCase())}><View className='dot'></View>{busStatusEnum[item.status]}</View>
-                </View>
-                <View className='middle'>
-                  <View>商机类型：{busTypeEnum[item.busType]}<Text style='margin-left: 20px'>来源：{item.source}</Text></View>
-                  <View className='source'>关联客户：{this.formatBusCustList(item.busCustList)}</View>
-                </View>
-                <View className='bottom'>
-                  <View className='bottom-l'>创建时间：{item.createTime ? moment(item.createTime).format('YYYY-MM-DD') : '--'}</View>
-                  <View className='bottom-r'>
-                    {
-                      item.status === 'NOT_TOUCH' || item.status === 'FIRST_TOUCH' || item.status === 'AGREEMENT' ?
-                      <View className='btn' onClick={()=>{this.goDetail(item.id)}}><Image src={followGrayIcon} className='icon'></Image><Text className='btn-text'>跟进</Text></View>    
-                      : ''      
-                    }
-                    {
-                      item.status === 'NOT_TOUCH' ?
-                      <View className='btn' onClick={()=>{this.goCreateHandler(1,item.id)}}><Image src={editIcon} className='icon'></Image><Text className='btn-text'>编辑</Text></View>
-                      : ''
-                    }
-                    {
-                      item.status === 'SUCCESS' || item.status === 'DEFEAT' ?
-                      <View className='btn' onClick={()=>{this.goDetail(item.id)}}><Image src={detailIcon} className='icon'></Image><Text className='btn-text'>详情</Text></View>
-                      : ''
-                    }   
+        <View className='list-box'>
+          <Pagination totalCount={businessLists.total} currentLen={businessLists.content.length} onPull={this.businessListsPullHandler}>
+            {
+              businessLists.content.map(item=>{
+                return (  
+                  <View className='list' key={item.id}>
+                    <View className='top'>
+                      <View className='top-l'>{item.name}</View>
+                      <View className={'top-r ' + (item.status.toLowerCase())}><View className='dot'></View>{busStatusEnum[item.status]}</View>
+                    </View>
+                    <View className='middle'>
+                      <View>商机类型：{busTypeEnum[item.busType]}<Text style='margin-left: 20px'>来源：{item.source}</Text></View>
+                      <View className='source'>关联客户：{this.formatBusCustList(item.busCustList)}</View>
+                    </View>
+                    <View className='bottom'>
+                      <View className='bottom-l'>创建时间：{item.createTime ? moment(item.createTime).format('YYYY-MM-DD') : '--'}</View>
+                      <View className='bottom-r'>
+                        {
+                          item.status === 'NOT_TOUCH' || item.status === 'FIRST_TOUCH' || item.status === 'AGREEMENT' ?
+                          <View className='btn' onClick={()=>{this.goDetail(item.id)}}><Image src={followGrayIcon} className='icon'></Image><Text className='btn-text'>跟进</Text></View>    
+                          : ''      
+                        }
+                        {
+                          item.status === 'NOT_TOUCH' ?
+                          <View className='btn' onClick={()=>{this.goCreateHandler(1,item.id)}}><Image src={editIcon} className='icon'></Image><Text className='btn-text'>编辑</Text></View>
+                          : ''
+                        }
+                        {
+                          item.status === 'SUCCESS' || item.status === 'DEFEAT' ?
+                          <View className='btn' onClick={()=>{this.goDetail(item.id)}}><Image src={detailIcon} className='icon'></Image><Text className='btn-text'>详情</Text></View>
+                          : ''
+                        }   
+                      </View>
+                    </View>
                   </View>
-                </View>
-              </View>
-            )
-          })
-        }
-        </Pagination>
-
+                )
+              })
+            }
+            </Pagination>
+        </View>
         <View className='create-btn'>
           <AtFab onClick={this.goCreateHandler}>
             <Text className='at-fab__icon at-icon at-icon-add'></Text>

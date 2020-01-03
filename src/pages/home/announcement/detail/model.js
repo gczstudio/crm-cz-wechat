@@ -11,19 +11,27 @@ export default {
 
   effects: {
     * announcementDetail({data}, { call, put }) {
-      const { code, payload } = yield call(detailApi.announcementDetail, data)
+      yield put({ type: 'saveFile',
+        payload: {
+          files: [],
+        } 
+      })
+      const { code, payload } = yield call(detailApi.announcementDetail, data.data)
       if (code === 0) {
         yield put({ type: 'save',
           payload: {
             detailData: payload,
           } 
         })
-        yield put({ 
-          type: 'batchGetFile',
-          data: {
-            ids: payload.relationFileId.join(',')
-          } 
-        })
+        data.callback&&data.callback(payload)
+        if(payload.relationFileId&&payload.relationFileId.length>0){
+          yield put({ 
+            type: 'batchGetFile',
+            data: {
+              ids: payload.relationFileId.join(',')
+            } 
+          })
+        }
       }
     },
     * batchGetFile({data}, { call, put }) {
@@ -32,7 +40,8 @@ export default {
         yield put({ type: 'saveFile',
           payload: {
             files: payload,
-          } })
+          } 
+        })
       }
     },
     * saveReplyComment({data}, { call }) {

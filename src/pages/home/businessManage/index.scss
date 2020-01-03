@@ -1,12 +1,19 @@
 
 .businessManage-page {
   height: 100%;
+  box-sizing: border-box;
   padding-top: 120px;
   .search-box{
     width: 100%;
     position: fixed;
     top: 120px;
     z-index: 9;
+  }
+  .list-box{
+    box-sizing: border-box;
+    height: 100%;
+    background: #F6FAFC;
+    padding-top: 80px;
   }
   .list{
     background: #fff;
