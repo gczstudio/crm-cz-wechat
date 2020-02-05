@@ -1,5 +1,9 @@
 // 请求连接前缀
-export const baseUrl = 'http://192.168.1.74:8080/crm'
+//微信小程序
+// export const baseUrl = 'http://192.168.1.74:8080/crm'
+//h5
+export const baseUrl = 'crm'
+
 
 // 输出日志信息
 export const noConsole = true;

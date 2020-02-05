@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, CoverImage, Input, Image  } from '@tarojs/components'
+import { View, Input, Image  } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import loginBg from '@/images/bg.png'
 import logo from '@/images/logo.png'
@@ -62,16 +62,15 @@ export default class Login extends Component {
     const { userName, password, loginDisabled } = this.state
     return (
       <View className='login-page'>
-        <Image src='http://192.168.1.74:8080/crm/common/file/download?id=a87f8b90-509d-48ca-aed7-5f32cb9b5834'></Image>
         <Header isBlank />
         <View className='login-bg'>
           <Image src={loginBg} style='width: 100%;height:100%;'></Image>
         </View>
         <View className='login-logo'>
-          <CoverImage src={logo}></CoverImage>
+          <Image src={logo} style='width: 100%;height:100%;'></Image>
         </View>
         <View className='login-title'>
-          <CoverImage src={title}></CoverImage>
+          <Image src={title} style='width: 100%;height:100%;'></Image>
         </View>
         <View className='login-box'>
           <View className='form-item'>

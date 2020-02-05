@@ -11,7 +11,7 @@ export default (options = { method: 'GET', data: {} }) => {
     )
   }
   return Taro.request({
-    url: baseUrl + options.url,
+    url:  baseUrl+options.url,
     data: {
       ...options.data,
     },

@@ -78,6 +78,16 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    devServer: {
+      host: 'localhost',
+      port: 10086,
+      proxy: {
+        '/crm': {
+          target: 'http://192.168.1.74:8080/',
+          changeOrigin: true
+        }
+      }
+    },
     module: {
       postcss: {
         autoprefixer: {
