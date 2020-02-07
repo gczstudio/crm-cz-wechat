@@ -1,7 +1,7 @@
 
 .home-page {
   width: 100%;
-  padding-top: 120px;
+  padding-top: 80px;
   background: #fff;
   .search-Header{
     height: 350px;
@@ -22,6 +22,9 @@
         background: #fff;
       }
     }
+  }
+  .at-tabs__header{
+    padding: 0 80px;
   }
   .at-search-bar{
     padding: 20px;

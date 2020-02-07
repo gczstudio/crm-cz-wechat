@@ -143,7 +143,7 @@ export default class Selectcustomer extends Component {
             { 
               bankCustomerLists.content.map(item=>{
                 return (
-                  <Label onClick={()=>{this.selectCustomerHandler(item)}} key={item.id}>
+                  <Label key={item.id}>
                     <View className='list-item'>
                       <View className='item-l'>
                         <View className='title'>{item.name}（{item.no})</View>
@@ -151,7 +151,7 @@ export default class Selectcustomer extends Component {
                         <View>时点储蓄余额：{item.totalBalance}元</View>
                       </View>
                       <View className='item-r'>
-                        <Radio color='#e83820' checked={backCustomer.ids.includes(item.no)}></Radio>
+                        <Radio color='#e83820' checked={backCustomer.ids.includes(item.no)} onClick={()=>{this.selectCustomerHandler(item)}}></Radio>
                       </View>
                     </View>
                   </Label>

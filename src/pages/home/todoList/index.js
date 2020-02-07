@@ -47,15 +47,22 @@ export default class Todolist extends Component {
                 <View className='top'>
                   <View className='top-l'>{item.remindName}</View>
                   {
-                    item.isDeal ? '':<View className='top-r'><View className='dot'></View>未读</View>
+                    item.isDeal ? <View className='top-r isRead'><View className='dot'></View>已读</View>:<View className='top-r'><View className='dot'></View>未读</View>
                   }
                 </View>
-                <View className='middle'>
-                  {item.content}
-                </View>
+                {
+                  typeof JSON.parse(item.content) === 'object' ?
+                  <View className='middle'>
+                    <View>客户编号: {JSON.parse(item.content).bank_cust_no}</View>
+                    <View>客户姓名: {JSON.parse(item.content).bank_cust_name}</View>
+                    <View>账户号码: {JSON.parse(item.content).event_account}</View>
+                    <View>时点余额: {JSON.parse(item.content).point_balance}</View>
+                  </View> 
+                  : null
+                }
                 <View className='bottom'>
                   <View className='bottom-l'><Text>{formatDate(item.pushTime)}</Text></View>
-                  <View className='bottom-r' onClick={()=>{this.goDetail(item)}}><Text className='bottom-text'>查阅</Text><AtIcon value='chevron-right' color='#0070FF' size='15'></AtIcon></View>
+                  <View className='bottom-r' onClick={()=>{this.goDetail(item)}}><Text className='bottom-text'>{item.isDeal?'阅读全文':'查阅'}</Text><AtIcon value='chevron-right' color='#0070FF' size='15'></AtIcon></View>
                 </View>
             </View>)
         })

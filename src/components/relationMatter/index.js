@@ -284,11 +284,11 @@ export default class Relationmatter extends Component {
               {
                 actLists.content.map(item=>{
                   return (
-                    <Label key={item.marketActResp.id} onClick={()=>{this.actHandler(item)}}>
+                    <Label key={item.marketActResp.id}>
                       <View className='list-box'>
                         <View className='title'>{item.marketActResp.actName}</View>
                         <View className='radio'>
-                          <Radio checked={scheduleBind.bindId.includes(item.marketActResp.id)} color='#e83820'></Radio>
+                          <Radio checked={scheduleBind.bindId.includes(item.marketActResp.id)} onClick={()=>{this.actHandler(item)}} color='#e83820'></Radio>
                         </View>
                       </View>
                     </Label>
@@ -309,11 +309,11 @@ export default class Relationmatter extends Component {
                 {
                   businessLists.content.map(item=>{
                     return (
-                      <Label key={item.id} onClick={()=>{this.businessHandler(item)}}>
+                      <Label key={item.id}>
                         <View className='list-box'>
                           <View className='title'>{item.name}</View>
                           <View className='radio'>
-                            <Radio checked={scheduleBind.bindId.includes(item.id)} color='#e83820'></Radio>
+                            <Radio checked={scheduleBind.bindId.includes(item.id)} onClick={()=>{this.businessHandler(item)}} color='#e83820'></Radio>
                           </View>
                         </View>
                       </Label>
@@ -334,7 +334,7 @@ export default class Relationmatter extends Component {
               {
                 bankCustomerLists.content.map(item=>{
                   return (
-                    <Label key={item.id} onClick={()=>{this.bankCustomerHandler(item)}}>
+                    <Label key={item.id}>
                       <View className='person-list'>
                         <View className='item-container'>
                           <Image src={avatar} className='item-icon'></Image>
@@ -344,7 +344,7 @@ export default class Relationmatter extends Component {
                           </View>
                         </View>
                         <View className='item-extra'>
-                          <Radio checked={scheduleBind.bindId.includes(Number(item.no))} color='#e83820'></Radio>
+                          <Radio checked={scheduleBind.bindId.includes(Number(item.no))} onClick={()=>{this.bankCustomerHandler(item)}} color='#e83820'></Radio>
                         </View>
                       </View>
                     </Label>

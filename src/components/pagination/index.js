@@ -30,9 +30,9 @@ export default class Pagination extends Component {
  
   constructor(props) {
     super(props)
-    this.setState({
+    this.state = {
       loadStatus: 'noData'
-    })
+    }
   }
 
   componentWillReceiveProps({currentLen, totalCount, pageSize}){
@@ -51,10 +51,10 @@ export default class Pagination extends Component {
     })
   }
 
-  ScrollToUpper() { //滚动到顶部事件
+  ScrollToUpper = () => { //滚动到顶部事件
   
   }
-  ScrollToLower() { //滚动到底部事件
+  ScrollToLower = () => { //滚动到底部事件
     console.log('滚动到底部事件')
     const { loadStatus } = this.state
     if(loadStatus=='lessTotalCount'){

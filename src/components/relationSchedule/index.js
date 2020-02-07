@@ -122,7 +122,7 @@ export default class RelationSchedule extends Component {
             { 
               scheduleLists.content.map(item=>{
                 return (
-                  <Label onClick={()=>{this.selectScheduleHandler(item)}} key={item.id}>
+                  <Label key={item.id}>
                     <View className='list-item'>
                       <View className='item-l'>
                         <View className='title'>{item.title} <Text className='tag'>{remindStatusEnum[item.remindStatus]}</Text></View>
@@ -130,7 +130,7 @@ export default class RelationSchedule extends Component {
                         <View>日程时间：{moment(item.startDate).format('YYYY-MM-DD HH:mm')} {moment(item.endDate).format('YYYY-MM-DD HH:mm')}</View>
                       </View>
                       <View className='item-r'>
-                        <Radio color='#e83820' checked={schedule.ids.includes(item.id)}></Radio>
+                        <Radio color='#e83820' checked={schedule.ids.includes(item.id)} onClick={()=>{this.selectScheduleHandler(item)}}></Radio>
                       </View>
                     </View>
                   </Label>
